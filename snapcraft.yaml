@@ -1,0 +1,22 @@
+name: telegram
+version: 0.9.42
+summary: Telegram desktop client
+description: |
+    Telegram is a popular messaging protocol with encryption and security as
+    its key focus.
+
+apps:
+  telegram:
+    command: telegram.sh
+    plugs: [unity7, network]
+
+parts:
+  telegram:
+    plugin: copy
+    source: https://updates.tdesktop.com/tlinux/tsetup.0.9.42.tar.xz
+    files:
+        Telegram: bin/Telegram
+  wrapper:
+    plugin: copy
+    files:
+        telegram.sh: bin/telegram.sh
