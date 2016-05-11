@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Telegram
+Comment=Official desktop version of Telegram messaging app
+GenericName=Telegram
+Exec=telegram %U
+Icon=${SNAP}/meta/gui/icon.png
+Type=Application
+StartupNotify=true
+StartupWMClass=Telegram
+Categories=Network;
+MimeType=x-scheme-handler/tg;

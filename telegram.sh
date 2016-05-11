@@ -1,6 +1,12 @@
 #!/bin/sh
 
 export HOME=$SNAP_USER_DATA 
+export XDG_DATA_HOME=$SNAP_USER_DATA
+export XDG_DATA_DIRS=$SNAP_USER_DATA
+export XDG_CACHE_HOME=$SNAP_USER_DATA
 export XDG_CONFIG_HOME=$SNAP_USER_DATA
+export XDG_RUNTIME_DIR=$SNAP_USER_DATA
+export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
 
-exec Telegram
+cd $SNAP_USER_DATA
+exec Telegram "$@"
