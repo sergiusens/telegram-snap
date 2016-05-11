@@ -2,7 +2,7 @@
 Name=Telegram
 Comment=Official desktop version of Telegram messaging app
 GenericName=Telegram
-Exec=telegram %U
+Exec=telegram-sergiusens.telegram %U
 Icon=${SNAP}/meta/gui/icon.png
 Type=Application
 StartupNotify=true
