@@ -1,5 +1,5 @@
 name: telegram-sergiusens
-version: 0.9.49
+version: 0.9.50
 summary: Telegram desktop client
 description: |
     Telegram is a popular messaging protocol with encryption and security as
@@ -8,12 +8,12 @@ description: |
 apps:
   telegram:
     command: telegram.sh -workdir $SNAP_USER_DATA -noupdate
-    plugs: [unity7, network, network-bind]
+    plugs: [unity7, network, network-bind, home]
 
 parts:
   telegram:
     plugin: copy
-    source: https://updates.tdesktop.com/tlinux/tsetup.0.9.49.tar.xz
+    source: https://updates.tdesktop.com/tlinux/tsetup.0.9.50.tar.xz
     stage-packages:
         - xkb-data
     files:
