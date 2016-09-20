@@ -7,6 +7,7 @@ export XDG_CACHE_HOME=$SNAP_USER_DATA
 export XDG_CONFIG_HOME=$SNAP_USER_DATA
 export XDG_RUNTIME_DIR=$SNAP_USER_DATA
 export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
+export QT_IM_MODULE=xim
 
 cd $SNAP_USER_DATA
 exec Telegram "$@"

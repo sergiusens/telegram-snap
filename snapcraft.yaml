@@ -1,24 +1,28 @@
 name: telegram-sergiusens
-version: 0.9.50
+version: 0.10.7
 summary: Telegram desktop client
 description: |
     Telegram is a popular messaging protocol with encryption and security as
     its key focus.
+confinement: strict
+grade: stable
 
 apps:
   telegram:
     command: telegram.sh -workdir $SNAP_USER_DATA -noupdate
-    plugs: [unity7, network, network-bind, home]
+    plugs: [unity7, network, network-bind, home, pulseaudio]
 
 parts:
   telegram:
-    plugin: copy
-    source: https://updates.tdesktop.com/tlinux/tsetup.0.9.50.tar.xz
+    source: https://telegram.org/dl/desktop/linux/tsetup.$SNAPCRAFT_PROJECT_VERSION.tar.xz
+    plugin: dump
     stage-packages:
         - xkb-data
-    files:
+        - libx11-xcb1
+    organize:
         Telegram: bin/Telegram
   wrapper:
-    plugin: copy
-    files:
+    source: .
+    plugin: dump
+    organize:
       telegram.sh: bin/telegram.sh
