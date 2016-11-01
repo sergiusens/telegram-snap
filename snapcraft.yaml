@@ -1,5 +1,5 @@
 name: telegram-sergiusens
-version: 0.10.7
+version: 0.10.19
 summary: Telegram desktop client
 description: |
     Telegram is a popular messaging protocol with encryption and security as
@@ -24,5 +24,9 @@ parts:
   wrapper:
     source: .
     plugin: dump
+    stage:
+        - bin/telegram.sh
+    snap:
+        - bin/telegram.sh
     organize:
       telegram.sh: bin/telegram.sh
