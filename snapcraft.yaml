@@ -1,5 +1,5 @@
 name: telegram-sergiusens
-version: 0.10.19
+version: 1.0.12
 summary: Telegram desktop client
 description: |
     Telegram is a popular messaging protocol with encryption and security as
@@ -9,7 +9,7 @@ grade: stable
 
 apps:
   telegram:
-    command: telegram.sh -workdir $SNAP_USER_DATA -noupdate
+    command: env PATH="/usr/local/bin:$PATH" telegram.sh -workdir $SNAP_USER_DATA -noupdate
     plugs: [unity7, network, network-bind, home, pulseaudio]
 
 parts:
