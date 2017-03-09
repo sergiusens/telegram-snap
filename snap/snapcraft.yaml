@@ -1,0 +1,48 @@
+name: telegram-sergiusens
+version: 1.0.14
+summary: A cloud-based messaging app with a focus on security and speed.
+description: |
+  Telegram is a messaging app with a focus on speed and security, it's
+  super-fast, simple and free. You can use Telegram on all your devices
+  at the same time - your messages sync seamlessly across any number of
+  your phones, tablets or computers.
+
+  With Telegram, you can send messages, photos, videos and files of any
+  type (doc, zip, mp3, etc), as well as create groups for up to 5000
+  people or channels for broadcasting to unlimited audiences. You can
+  write to your phone contacts and find people by their usernames. As a
+  result, Telegram is like SMS and email combined - and can take care
+  of all your personal or business messaging needs.
+  
+confinement: strict
+grade: stable
+
+apps:
+  telegram:
+    environment:
+      QT_XKB_CONFIG_ROOT: /usr/share/X11/xkb
+      QT_IM_MODULE: xim
+      TMPDIR: $XDG_RUNTIME_DIR
+    command: desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
+    plugs:
+      - home
+      - network-manager
+      - network
+      - network-bind      
+      - pulseaudio
+      - unity7
+      - x11
+
+parts:
+  telegram:
+    source: https://telegram.org/dl/desktop/linux/tsetup.$SNAPCRAFT_PROJECT_VERSION.tar.xz
+    plugin: dump
+    after:
+      - desktop-glib-only
+    stage-packages:
+      - libasound2
+      - libpulse0
+      - libx11-xcb1
+      - xkb-data      
+    organize:
+      Telegram: bin/Telegram
