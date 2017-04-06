@@ -23,7 +23,7 @@ apps:
       QT_XKB_CONFIG_ROOT: /usr/share/X11/xkb
       QT_IM_MODULE: xim
       TMPDIR: $XDG_RUNTIME_DIR
-    command: desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
+    command: env PATH=$SNAP/usr/local/bin:$PATH desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
     plugs:
       - home
       - network-manager
