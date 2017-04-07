@@ -44,5 +44,6 @@ parts:
       - libpulse0
       - libx11-xcb1
       - xkb-data      
+      - libx11-6
     organize:
       Telegram: bin/Telegram
