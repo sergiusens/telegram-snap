@@ -1,5 +1,5 @@
 name: telegram-sergiusens
-version: 1.0.29
+version: 1.1.0
 summary: A cloud-based messaging app with a focus on security and speed.
 description: |
   Telegram is a messaging app with a focus on speed and security, it's
@@ -28,7 +28,7 @@ apps:
       - home
       - network-manager
       - network
-      - network-bind      
+      - network-bind
       - pulseaudio
       - unity7
       - x11
@@ -36,6 +36,7 @@ apps:
 parts:
   telegram:
     source: https://telegram.org/dl/desktop/linux/tsetup.$SNAPCRAFT_PROJECT_VERSION.tar.xz
+    source-checksum: sha384/cba2b6e9b1e6a883793bc42b7488cb0458779cd5aba9fad4a5599d00bd059f3665fa0d35b8b6cbf34ef22eddb172758a
     plugin: dump
     after:
       - desktop-glib-only
@@ -43,7 +44,7 @@ parts:
       - libasound2
       - libpulse0
       - libx11-xcb1
-      - xkb-data      
+      - xkb-data
       - libx11-6
     organize:
       Telegram: bin/Telegram
