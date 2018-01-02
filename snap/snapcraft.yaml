@@ -1,5 +1,5 @@
 name: telegram-sergiusens
-version: 1.2.1
+version: 1.2.6
 summary: A cloud-based messaging app with a focus on security and speed.
 description: |
   Telegram is a messaging app with a focus on speed and security, it's
@@ -31,8 +31,11 @@ apps:
       - network
       - network-bind
       - pulseaudio
+      - desktop
+      - desktop-legacy
       - unity7
       - x11
+      - wayland
 
 parts:
   telegram:
