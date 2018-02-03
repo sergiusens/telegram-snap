@@ -24,7 +24,8 @@ apps:
       QT_IM_MODULE: xim
       TMPDIR: $XDG_RUNTIME_DIR
       WAYLAND_DISPLAY: no-wayland
-    command: env PATH=$SNAP/usr/local/bin:$PATH desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
+      PATH: $SNAP/usr/local/bin:$PATH
+    command: bin/Telegram -workdir $SNAP_USER_DATA -noupdate
     plugs:
       - home
       - network-manager
@@ -35,7 +36,6 @@ apps:
       - desktop-legacy
       - unity7
       - x11
-      - wayland
 
 parts:
   telegram:
