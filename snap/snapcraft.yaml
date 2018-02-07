@@ -25,15 +25,13 @@ apps:
       TMPDIR: $XDG_RUNTIME_DIR
       WAYLAND_DISPLAY: no-wayland
       PATH: $SNAP/usr/local/bin:$PATH
-    command: bin/Telegram -workdir $SNAP_USER_DATA -noupdate
+    command: bin/desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
     plugs:
       - home
       - network-manager
       - network
       - network-bind
       - pulseaudio
-      - desktop
-      - desktop-legacy
       - unity7
       - x11
 
