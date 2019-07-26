@@ -15,6 +15,9 @@ description: |
   result, Telegram is like SMS and email combined - and can take care
   of all your personal or business messaging needs.
 
+architectures:
+  - build-on: amd64
+
 confinement: strict
 grade: stable
 
