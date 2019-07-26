@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+OLD_SNAP="telegram-sergiusens"
+NEW_SNAP="telegram-desktop"
+PUBLISHER="Telegram FZ-LLC"
+
+MIGRATION_TITLE="Migrate to the ${NEW_SNAP} snap"
+MIGRATION_TEXT="This snap was maintained by the Snapcrafters community, <i>but will not be getting any further updates</i>.\
+\\n\\n\
+<b>${PUBLISHER} is now publishing an official snap</b>, you should migrate to ${NEW_SNAP} snap using these commands:\
+\\n\\n\
+<tt>snap disable ${OLD_SNAP}</tt>\\n\
+<tt>snap install ${NEW_SNAP}</tt>\
+\\n\\n\
+You can read more about the official ${PUBLISHER} snap on its store page: \
+\\n\\n\
+https://snapcraft.io/${NEW_SNAP}"
+
+# Display migration alert
+$SNAP/usr/bin/yad \
+  --title="${MIGRATION_TITLE}" \
+  --text="${MIGRATION_TEXT}" \
+  --center \
+  --on-top \
+  --fixed
+
+exec "$@"

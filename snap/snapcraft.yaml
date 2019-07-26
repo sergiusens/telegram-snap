@@ -26,7 +26,7 @@ apps:
       TMPDIR: $XDG_RUNTIME_DIR
       WAYLAND_DISPLAY: no-wayland
       PATH: $SNAP/usr/local/bin:$PATH
-    command: bin/desktop-launch $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
+    command: bin/desktop-launch $SNAP/migration $SNAP/bin/Telegram -workdir $SNAP_USER_DATA -noupdate
     plugs:
       - home
       - network-manager
@@ -58,3 +58,10 @@ parts:
     source-subdir: glib-only
     stage-packages:
       - libglib2.0-bin
+      - yad
+  migration:
+    plugin: dump
+    source: .
+    prime:
+      - migration
+
