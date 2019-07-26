@@ -1,5 +1,6 @@
 name: telegram-sergiusens
 version: 1.7.14
+base: core
 summary: A cloud-based messaging app with a focus on security and speed.
 description: |
   Telegram is a messaging app with a focus on speed and security, it's
@@ -49,3 +50,11 @@ parts:
       - libx11-6
     organize:
       Telegram: bin/Telegram
+  desktop-glib-only:
+    build-packages:
+      - libglib2.0-dev
+    plugin: make
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: glib-only
+    stage-packages:
+      - libglib2.0-bin
